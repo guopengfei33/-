@@ -1,0 +1,58 @@
+### servlet
+
+## servlet 作用和运行条件
+
+    1. Servlet 什么东西 :  servlet是运行在服务器端的Java应用程序
+    2. Servlet 作用 : 处理用户的请求和响应结果到客户端
+    3. Tomcat(web容器), jetty, nginx(主要做反向代理服务器,或者负载均衡), weblogic
+    4. 怎么样编写 Servlet,配置 Servlet
+        1. mac 配置 Tomcat : setting - 找到applicationServer - 添加Tomcat
+        2. 在项目中添加 Tomcat : 选中项目,找到Project structor 添加 tomcat jar
+
+## servlet 配置和执行过程
+
+## servlet 生命周期
+    1. servlet 的生命周期就是从servlet的创建到销毁的过程,包括
+        1. 调用 init() 方法进行初始化(),该方法只有在初始化的时候调用一次,
+        2. 调用 service() 方法进行处理客户端的请求
+        3. 调用 destroy() 方法终止
+        4. 最后由 JVM 的垃圾回收器进行垃圾回收
+
+## servlet 编程实例
+
+
+
+### Http 协议
+
+##  Http 协议是无连接的(无状态)
+    
+    1. 一次请求对应一个响应,请求响应完成后,谁也不认识谁,再次请求,又是一个新的请求;
+    2. 步骤:
+        1. 客户端向服务器发起连接
+        2. 客户端向服务器发送请求
+        3. 服务端向客户端发起响应
+        4. 服务器端关闭连接
+    3. IP地址
+        1. 是网络之间互连的协议,也就是计算机网络相互连接进行通信而设计的协议;
+        2. 网络中的每台计算机都必须有唯一的IP地址,IP地址是一个逻辑机智,具有全球唯一性
+        3. IP地址占4个字节,常用点分十进制格式标示
+    4. URL : 同意资源定位符
+        1. http://host:8080/bookec/pages/user/index.html
+            1. http://  : 代表超文本传输协议
+            2. host : 标示 Internet 主机域名或者IP地址
+            3. 8080 : 端口,从0-65535, 1024以下的端口号给预定义的服务
+            4. bookec : web应用的
+            5. pages/user/  : web 应用中的路径(path)
+            6. index.html : 是文件夹中得一个HTML文件(页面)
+    5. URI : /bookec/pages/user/index.html 是同意资源标示符 URI,URI必须是以/开始
+    6. MIME 类型 : 通知文档类型
+        1. 超文本标签语言文本 : .html,.html text/html
+        2. 普通文本 : .txt text/plain
+        3. RTF文本 : .rtf application/rtf
+
+## web 应用开发模式
+    1. C/S : 即客户机/服务器模式,又称胖客户端,富客户端
+    2. B/S : 即浏览器/服务器模式,又称瘦客户端,贫客户端
+
+### 会话管理(session)
+    1. 在服务器端用来存储特定客户端的状态(数据)的机制叫会话,即session
